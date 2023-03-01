@@ -11,3 +11,5 @@ In terms of color, I made different shapes correspond to different colors, and c
 In the initial design, I only added the circle. Through the color change of the circle and the superposition of the movement track, although it has a good effect, I think it is too monotonous.
 
 In the later stages, I added a lot of geometric shapes, which made the color and pattern more variable.
+
+My first sketch is of two pyramids. the idea is to have two of the four layers slide to the right and the other two slide to the left, creating an endless loop of layers coming from each side of the screen. the movement should not be linear so the viewer has a chance to look at the pyramids breifly before they move again. 
