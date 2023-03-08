@@ -62,8 +62,8 @@ function draw_one_frame(cur_frac) {
 	ellipse(0.25 * width, 0.10 * height, sun_size);
   
 	// sand
-	fill(223, 173, 96);
-	rect(0, (height/2)+20, width, (height/2)-20);
+	fill("#ffb323");
+	rect(0, (height/2), width, (height/2));
   
 	stroke(0);
 	fill(100, 100, 100);
@@ -74,6 +74,7 @@ function draw_one_frame(cur_frac) {
 	let b1_size = height/12;
 	let b2_size = height/6;
   
+	
 	let grid_points1 = [
 	 -0.25 * width,
 	  0.0 * width,
@@ -100,17 +101,17 @@ function draw_one_frame(cur_frac) {
 	}*/
   
 	let grid_points2 = [
-	 -0.40 * width,
-	  0.10 * width,
-	  0.60 * width,
-	  1.10 * width
+	 -0.425 * width,
+	  0.125 * width,
+	  0.625 * width,
+	  1.125 * width
 	]
 
 	let grid_points3 = [
-		1.10 * width,
-		 0.60 * width,
-		 0.10 * width,
-		 -0.40 * width
+		1.125 * width,
+		 0.625 * width,
+		 0.125 * width,
+		 -0.425 * width
 	   ]
   
 	if(debugView) {
@@ -127,33 +128,42 @@ function draw_one_frame(cur_frac) {
 	triangle(0, height, width/2, height, width/4, height/5);
 	triangle(width/2, height, width, height, (width/4)*3, height/5);
 
+	
 	/*Draw Slabs*/
-	fill(100, 100, 100);
+	fill('#000000');
 	noStroke();
 	for(let i=0; i<grid_points2.length-1; i++) {
 	  let cur_x_pos = map(cur_frac, 0, 1, grid_points2[i], grid_points2[i+1])
-	  rect(cur_x_pos, (height/5)*4, 2.5*b2_size, height/5);
+	  let base_coord = cur_x_pos-60;
+	  let width_rect = base_coord + (4*b2_size);
+	  
+
+	  rect(base_coord, (height/5)*4, 4*b2_size, height/5);
+	  triangle(base_coord,(height/5)*4,base_coord,(height/5)*5,cur_x_pos-(height/5)-10,(height/5)*5);
+	  triangle(width_rect,(height/5)*4,width_rect+(height/5)+10,height,width_rect,height);
+
+		
 	}
 
-	fill(100, 100, 100);
+	fill('#ec7100');
 	noStroke();
 	for(let i=0; i<grid_points3.length-1; i++) {
 	  let cur_x_pos = map(cur_frac, 0, 1, grid_points3[i], grid_points3[i+1])
-	  rect(cur_x_pos, (height/5)*3, 2.5*b2_size, height/5);
+	  rect(cur_x_pos, (height/5)*3, 2.6*b2_size, height/5);
 	}
 
-	fill(100, 100, 100);
+	fill('#ec7100');
 	noStroke();
 	for(let i=0; i<grid_points2.length-1; i++) {
 	  let cur_x_pos = map(cur_frac, 0, 1, grid_points2[i], grid_points2[i+1])
-	  rect(cur_x_pos, (height/5)*2, 2.5*b2_size, height/5);
+	  rect(cur_x_pos, (height/5)*2, 2.6*b2_size, height/5);
 	}
 
-	fill(100, 100, 100);
+	fill('#ec7100');
 	noStroke();
 	for(let i=0; i<grid_points3.length-1; i++) {
 	  let cur_x_pos = map(cur_frac, 0, 1, grid_points3[i], grid_points3[i+1])
-	  rect(cur_x_pos, (height/5), 2.5*b2_size, height/5);
+	  rect(cur_x_pos, (height/5), 2.6*b2_size, height/5);
 	}
   }
   
