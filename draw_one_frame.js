@@ -58,12 +58,16 @@ function draw_one_frame(cur_frac) {
 	rect(0, 0, width, height);
   
 	// sun
-	fill(255, 255, 0);
-	ellipse(0.25 * width, 0.10 * height, sun_size);
+	/*fill(255, 255, 0);
+	ellipse(0.25 * width, 0.10 * height, sun_size);*/
   
 	// sand
-	fill("#ffb323");
-	rect(0, (height/2), width, (height/2));
+	/*fill("#ffb323");
+	rect(0, (height/2), width, (height/2));*/
+
+	// top 5th
+	/*fill('#ffffff');
+	rect(0,0,width,height/5);*/
   
 	stroke(0);
 	fill(100, 100, 100);
@@ -124,23 +128,23 @@ function draw_one_frame(cur_frac) {
 	}
 
 	/*Pyramid guides*/
-	fill("ffffff");
+	/*fill("ffffff");
 	triangle(0, height, width/2, height, width/4, height/5);
-	triangle(width/2, height, width, height, (width/4)*3, height/5);
+	triangle(width/2, height, width, height, (width/4)*3, height/5);*/
 
 	
 	/*Draw Slabs*/
-	fill('#000000');
+	fill('#ec7100');
 	noStroke();
 	for(let i=0; i<grid_points2.length-1; i++) {
 	  let cur_x_pos = map(cur_frac, 0, 1, grid_points2[i], grid_points2[i+1])
 	  let base_coord = cur_x_pos-60;
-	  let width_rect = base_coord + (4*b2_size);
+	  let width_rect = (4*b2_size);
 	  
 
 	  rect(base_coord, (height/5)*4, 4*b2_size, height/5);
 	  triangle(base_coord,(height/5)*4,base_coord,(height/5)*5,cur_x_pos-(height/5)-10,(height/5)*5);
-	  triangle(width_rect,(height/5)*4,width_rect+(height/5)+10,height,width_rect,height);
+	  triangle(base_coord+width_rect,(height/5)*4,base_coord+width_rect+(height/9)+10,height,base_coord+width_rect,height);
 
 		
 	}
@@ -149,21 +153,32 @@ function draw_one_frame(cur_frac) {
 	noStroke();
 	for(let i=0; i<grid_points3.length-1; i++) {
 	  let cur_x_pos = map(cur_frac, 0, 1, grid_points3[i], grid_points3[i+1])
-	  rect(cur_x_pos, (height/5)*3, 2.6*b2_size, height/5);
+	  base_coord2= cur_x_pos;
+	  let width_rect2 = (2.65*b2_size);
+
+
+	  rect(cur_x_pos, (height/5)*3, 2.655*b2_size, height/5);
+	  triangle(base_coord2,(height/5)*3,base_coord2,(height/5)*4,base_coord2-width_rect2/4,(height/5)*4);
+	  triangle(base_coord2+width_rect2,(height/5)*3,base_coord2+width_rect2+(height/9),(height/5)*4,base_coord2+width_rect2,(height/5)*4);
 	}
 
 	fill('#ec7100');
 	noStroke();
 	for(let i=0; i<grid_points2.length-1; i++) {
+
 	  let cur_x_pos = map(cur_frac, 0, 1, grid_points2[i], grid_points2[i+1])
-	  rect(cur_x_pos, (height/5)*2, 2.6*b2_size, height/5);
+	  
+	  /*rect(cur_x_pos, (height/5)*2, 1.5*b2_size, height/5);*/
+	  quad(cur_x_pos+(height/3),(height/5)*2,cur_x_pos+(height/9),(height/5)*2,cur_x_pos,(height/5)*3,cur_x_pos+(height/5)*2.21,(height/5)*3);
 	}
 
 	fill('#ec7100');
 	noStroke();
 	for(let i=0; i<grid_points3.length-1; i++) {
 	  let cur_x_pos = map(cur_frac, 0, 1, grid_points3[i], grid_points3[i+1])
-	  rect(cur_x_pos, (height/5), 2.6*b2_size, height/5);
+
+	  /*rect(cur_x_pos, (height/5), 2.6*b2_size, height/5);*/
+	  triangle(cur_x_pos+height/4.5,height/5,cur_x_pos+height/9,(height/5)*2,cur_x_pos+height/3,(height/5)*2);
 	}
   }
   

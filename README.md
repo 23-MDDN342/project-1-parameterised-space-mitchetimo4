@@ -13,3 +13,6 @@ In the initial design, I only added the circle. Through the color change of the 
 In the later stages, I added a lot of geometric shapes, which made the color and pattern more variable.
 
 My first sketch is of two pyramids. the idea is to have two of the four layers slide to the right and the other two slide to the left, creating an endless loop of layers coming from each side of the screen. the movement should not be linear so the viewer has a chance to look at the pyramids breifly before they move again. 
+
+14/03/23
+I now have all of the pyramid slabs moving and the right dimensions. Refer to development log for more info. My next step is to add more details but i have been thinking about rethinking the way i want to display what i have. I was originally going to create a scene/setting where the pyramids were in an accurate environment. i have started to rethink this because it feels too busy with the amount of movement. im leaning towards more of an abstract approach but i might backtrack if it doesnt work out. The next step is to experiment with some new designs and then ofc add some more detail. 
