@@ -58,7 +58,13 @@ function draw_one_frame(cur_frac) {
 	rect(0, 0, width, height);
   
 	// sun
+	fill('#ff5492');
+	ellipse(0.5 * width, 0.02 * height, sun_size);
 	fill('#ff2977');
+	ellipse(0.5 * width, 0.02 * height, sun_size*0.5);
+	noFill();
+	stroke("#ffa9c9");
+	strokeWeight(height/40);
 	ellipse(0.5 * width, 0.02 * height, sun_size);
   
 	// sand
@@ -162,6 +168,10 @@ function draw_one_frame(cur_frac) {
 
 		
 	  quad(base_coord,(height/5)*4,base_coord+width_rect,(height/5)*4,base_coord+width_rect+(height/9)+10,(height/5)*5,cur_x_pos-(height/5)-10,height);
+	  line(cur_x_pos+(height/9)*2,(height/5)*4,cur_x_pos+(height/9)*2,(height/5)*5);
+	  line(cur_x_pos+(height/9)*.0005,(height/5)*4,cur_x_pos+(height/9)*0.0005,(height/5)*5);
+	  line(cur_x_pos+(height/9)*4,(height/5)*4,cur_x_pos+(height/9)*4,(height/5)*5);
+
 
 	}
 
@@ -186,6 +196,9 @@ function draw_one_frame(cur_frac) {
 	  let width_rect2 = (2.65*b2_size);
 
 	  quad(base_coord2,(height/5)*3,base_coord2+width_rect2,(height/5)*3,base_coord2+width_rect2+(height/9),(height/5)*4,base_coord2-width_rect2/4,(height/5)*4);
+	  line(cur_x_pos+(height/9),(height/5)*3,cur_x_pos+(height/9),(height/5)*4);
+	  line(cur_x_pos+(height/9)*3,(height/5)*3,cur_x_pos+(height/9)*3,(height/5)*4);
+
 
 	}
 
@@ -205,7 +218,7 @@ function draw_one_frame(cur_frac) {
 		let cur_x_pos = map(cur_frac, 0, 1, grid_points2[i], grid_points2[i+1])
 
 		quad(cur_x_pos+(height/3),(height/5)*2,cur_x_pos+(height/9),(height/5)*2,cur_x_pos,(height/5)*3,cur_x_pos+(height/5)*2.21,(height/5)*3);
-
+		line(cur_x_pos+(height/9)*2,(height/5)*2,cur_x_pos+(height/9)*2,(height/5)*3);
 	}
 
 	fill('#ec7100'); //top layer
