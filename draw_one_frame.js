@@ -49,7 +49,27 @@ function drawflower(i,k){
 		}
 }*/
 
+//LOAD BACKGROUND IMAGE
+/*let img;
+function preload() {
+	img = loadImage('cloudsPyra.png');
+}
+
+function setup(){
+	image(img, 0, 0);
+}*/
+
+let FirstRun = true
+let img;
 function draw_one_frame(cur_frac) {
+if(FirstRun){
+
+	img = loadImage('cloudsPrya.png');
+	
+	FirstRun = false
+	
+} 
+
 	let sun_size = height/2;
   
 	noStroke();
@@ -57,15 +77,7 @@ function draw_one_frame(cur_frac) {
 	fill(0, 204, 255);
 	rect(0, 0, width, height);
   
-	// sun
-	fill('#ff5492');
-	ellipse(0.5 * width, 0.02 * height, sun_size);
-	fill('#ff2977');
-	ellipse(0.5 * width, 0.02 * height, sun_size*0.5);
-	noFill();
-	stroke("#ffa9c9");
-	strokeWeight(height/40);
-	ellipse(0.5 * width, 0.02 * height, sun_size);
+
   
 	// sand
 	/*fill("#ffb323");
@@ -83,8 +95,31 @@ function draw_one_frame(cur_frac) {
   
 	let b1_size = height/12;
 	let b2_size = height/6;
-  
-	
+	push()
+	if (width=960){
+		scale(0.5);
+	image(img, 0, 0);
+	}else if (width = 1920){
+		scale(1);
+		image(img, 0, 0);
+	}else if (width = 2250){
+		scale(1.17187);
+		image(img, 0, 0);
+	}
+	pop()
+
+		// sun
+		
+	noStroke();
+	fill('#ff5492');
+	ellipse(0.5 * width, 0.02 * height, sun_size);
+	fill('#ff2977');
+	ellipse(0.5 * width, 0.02 * height, sun_size*0.5);
+	noFill();
+	stroke("#ffa9c9");
+	strokeWeight(height/40);
+	ellipse(0.5 * width, 0.02 * height, sun_size);
+
 	let grid_points1 = [
 	 -0.25 * width,
 	  0.0 * width,
